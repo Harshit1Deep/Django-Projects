@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class='container'>
+  <img src="https://plus.unsplash.com/premium_photo-1665203604603-e097954797e9?q=140&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+  <h1 class="text-center">Contact Us</h1>
+  <form method="post" action="/contact">
+       {% csrf_token %}
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" name = "name" placeholder="Username" aria-label="Enter your name" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="email" placeholder="Enter your email" aria-label="email" aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+        </div>
+
+        <div class="mb-3">
+          <label for="basic-url" class="form-label">Our URL</label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">https://khazanakhana.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+          </div>
+          <div class="form-text" id="basic-addon4"></div>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">₹</span>
+          <input type="text" class="form-control" name="amount" aria-label="Amount (to the nearest dollar)">
+          <span class="input-group-text"></span>
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="khazana" aria-label="Username">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" placeholder="khana.com" aria-label="Server">
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-text">Enter your message</span>
+          <textarea class="form-control" name="message" aria-label="With textarea"></textarea>
+        </div>
+  <button type="submit" class="btn btn-primary my-2">Submit</button>
+  </form>
+</div>  
+
+
+{% endblock body %} 

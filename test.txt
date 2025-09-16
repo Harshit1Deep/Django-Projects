@@ -1,0 +1,25 @@
+Static file
+in py manage.py shell
+>>>from website.models import Contact
+>>> Contact.objects.all()
+<QuerySet [<Contact: Rohan>, <Contact: nandan>]>
+>>> Contact.objects.all()[0]
+<Contact: Rohan>
+>>> Contact.objects.all()[0].name
+'Rohan'
+>>>Contact.objects.filter(name="nandan")
+<QuerySet [<Contact: nandan>]>
+>>> Contact.objects.filter(name="nandan",email="nandan")
+<QuerySet [<Contact: nandan>]>
+>>> Contact.objects.filter(name="nandan",email="nandan@gmail.com")
+<QuerySet []>
+>>> Contact.objects.filter(name="nandan",email="nandan")[0] 
+<Contact: nandan>
+>>> ins = Contact.objects.filter(name="nandan",email="nandan")[0]
+>>> ins.amount="500"
+>>> ins.save()
+>>>Contact.objects.all().first()         
+<Contact: Rohan>
+>>> Contact.objects.all().last()  
+<Contact: nandan>
+>>> Contact.objects.filter(message__startswith="o") 
